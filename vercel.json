@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/creative",
+      "destination": "/creative/",
+      "permanent": false
+    },
+    {
+      "source": "/kachitto",
+      "destination": "/kachitto/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/creative/:path*",
+      "destination": "/dist/creative/:path*"
+    },
+    {
+      "source": "/kachitto/:path*",
+      "destination": "/dist/kachitto/:path*"
+    }
+  ]
+}
