@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>関西大学 | 制作実績 | 株式会社digitive</title>
+  <meta name="description" content="関西大学のInstagram運用、学内イベント撮影、プロモーション映像など、複数年にわたる包括的なクリエイティブ支援。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Noto Sans JP', 'Inter', sans-serif; color: #111; background: #fff; line-height: 1.8; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --accent: #e63946; --accent-hover: #c62f3b; --accent-light: #fef1f2;
+      --dark: #111111; --gray-700: #555555; --gray-500: #888888;
+      --gray-300: #cccccc; --gray-100: #f5f5f5; --white: #ffffff;
+      --shadow-md: 0 4px 24px rgba(0,0,0,0.1); --radius: 12px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { height: 24px; width: auto; }
+    .logo-text { font-size: 0.8rem; font-weight: 600; color: var(--gray-700); letter-spacing: 0.1em; border-left: 1px solid var(--gray-300); padding-left: 12px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 500; color: var(--gray-700); transition: color 0.3s; }
+    .back-link:hover { color: var(--accent); }
+    .back-link svg { width: 16px; height: 16px; }
+
+    .portfolio-hero { position: relative; width: 100%; height: 560px; margin-top: 72px; overflow: hidden; background: var(--dark); }
+    .portfolio-hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+    .portfolio-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 60px; }
+    .portfolio-hero-tag { display: inline-flex; background: var(--accent); color: var(--white); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; margin-bottom: 16px; width: fit-content; }
+    .portfolio-hero-title { font-size: 2.8rem; font-weight: 900; color: var(--white); line-height: 1.25; margin-bottom: 8px; }
+    .portfolio-hero-client { font-size: 1rem; color: rgba(255,255,255,0.6); }
+
+    .project-detail { padding: 80px 0; }
+    .project-grid { display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: start; }
+    .project-description h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; line-height: 1.5; }
+    .project-description p { font-size: 0.95rem; color: var(--gray-700); line-height: 2; margin-bottom: 20px; }
+    .project-info { background: var(--gray-100); border-radius: var(--radius); padding: 32px; }
+    .project-info-item { padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .project-info-item:first-child { padding-top: 0; }
+    .project-info-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .project-info-label { display: flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 6px; }
+    .project-info-label svg { width: 14px; height: 14px; stroke: var(--gray-500); }
+    .project-info-value { font-size: 0.92rem; font-weight: 600; color: var(--dark); line-height: 1.6; }
+
+    .scope-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+    .scope-tag { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent-light); border: 1px solid rgba(230,57,70,0.12); border-radius: 6px; font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+    .scope-tag svg { width: 14px; height: 14px; stroke: var(--accent); }
+
+    /* VIDEO GRID */
+    .video-section { padding: 0 0 80px; }
+    .video-section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .video-section-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 32px; }
+    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .video-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); background: var(--white); border: 1px solid rgba(0,0,0,0.06); }
+    .video-card-thumb {
+      position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; cursor: pointer; display: block;
+    }
+    .video-card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s, filter 0.4s; }
+    .video-card-thumb:hover img { transform: scale(1.05); filter: brightness(0.85); }
+    .video-card-thumb .play-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 64px; height: 64px; background: rgba(230,57,70,0.9); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s, background 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .video-card-thumb:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); background: rgba(230,57,70,1); }
+    .video-card-thumb .play-btn svg { width: 24px; height: 24px; fill: #fff; margin-left: 3px; }
+    .video-card-label { padding: 12px 16px; font-size: 0.82rem; font-weight: 600; color: var(--dark); }
+
+    /* MULTI-PROJECT */
+    .multi-project { padding: 0 0 80px; }
+    .multi-project-title {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 24px;
+    }
+    .project-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .project-card {
+      background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius);
+      overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .project-card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+    .project-card-body { padding: 20px; }
+    .project-card-body h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .project-card-body p { font-size: 0.82rem; color: var(--gray-700); line-height: 1.7; }
+    .project-card-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+
+    .other-works { padding: 80px 0; background: var(--gray-100); }
+    .other-works-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .other-works-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 40px; }
+    .other-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .work-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/10; background: var(--dark); transition: transform 0.4s; }
+    .work-card:hover { transform: translateY(-6px); }
+    .work-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; opacity: 0.85; }
+    .work-card:hover img { transform: scale(1.05); opacity: 1; }
+    .work-card-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; }
+    .work-card-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .work-card-overlay h4 { color: white; font-size: 0.95rem; font-weight: 700; }
+    .work-card-overlay p { color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-top: 2px; }
+
+    .cta-section { padding: 100px 0; background: var(--dark); text-align: center; color: white; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 150%; height: 150%; background: radial-gradient(ellipse, rgba(230,57,70,0.1) 0%, transparent 55%); }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-content h2 { font-size: 2rem; font-weight: 900; margin-bottom: 16px; }
+    .cta-content p { font-size: 0.95rem; color: rgba(255,255,255,0.5); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-accent { display: inline-flex; align-items: center; gap: 8px; padding: 16px 40px; background: var(--accent); color: var(--white); border-radius: 4px; font-size: 0.95rem; font-weight: 700; transition: all 0.3s; }
+    .btn-accent:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230,57,70,0.4); }
+
+    .footer { background: #0a0a0a; color: rgba(255,255,255,0.4); padding: 32px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; }
+    .footer-inner a { color: rgba(255,255,255,0.4); transition: color 0.3s; }
+    .footer-inner a:hover { color: var(--accent); }
+
+    @media (max-width: 1024px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .project-cards { grid-template-columns: 1fr; }
+      .other-works-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .portfolio-hero { height: 400px; }
+      .portfolio-hero-overlay { padding: 32px 24px; }
+      .portfolio-hero-title { font-size: 1.8rem; }
+      .other-works-grid { grid-template-columns: 1fr; }
+      .cta-content h2 { font-size: 1.5rem; }
+      .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../creative-lp.html" class="logo">
+        <img src="../assets/logos/digitive_black.png" alt="digitive">
+        <span class="logo-text">映像制作 / 写真撮影</span>
+      </a>
+      <a href="../creative-lp.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        トップに戻る
+      </a>
+    </div>
+  </header>
+
+  <section class="portfolio-hero">
+    <img src="https://digitive.jp/wp-content/uploads/2025/09/関西大学_2-1.png" alt="関西大学">
+    <div class="portfolio-hero-overlay">
+      <div class="portfolio-hero-tag">University / SNS / Event / Video</div>
+      <h1 class="portfolio-hero-title">関西大学</h1>
+      <p class="portfolio-hero-client">Instagram運用・映像制作・イベント撮影</p>
+    </div>
+  </section>
+
+  <section class="project-detail">
+    <div class="container">
+      <div class="project-grid">
+        <div class="project-description">
+          <h2>複数年にわたる包括的なクリエイティブ支援</h2>
+          <p>関西大学との取り組みは複数年にわたり、SNS運用からイベント撮影、プロモーション映像制作まで、幅広いクリエイティブ領域をワンストップで支援しています。</p>
+          <p>公式Instagramアカウントの運用では、大学のブランドイメージに沿ったビジュアル設計と投稿企画を担当。キャンパスの魅力を写真・短尺動画で発信し、高校生・受験生へのリーチを拡大しました。</p>
+          <p>また、学内イベントやオープンキャンパスの記録映像、施設紹介映像なども制作。大学の多面的な魅力を映像・写真の力で発信し続けています。</p>
+          <div class="scope-tags">
+            <span class="scope-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram運用
+            </span>
+            <span class="scope-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              プロモーション映像
+            </span>
+            <span class="scope-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              イベント撮影
+            </span>
+            <span class="scope-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              企画・コンテンツ設計
+            </span>
+          </div>
+        </div>
+        <aside class="project-info">
+          <div class="project-info-item">
+            <div class="project-info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Client
+            </div>
+            <div class="project-info-value">関西大学</div>
+          </div>
+          <div class="project-info-item">
+            <div class="project-info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Type
+            </div>
+            <div class="project-info-value">SNS / Video / Event</div>
+          </div>
+          <div class="project-info-item">
+            <div class="project-info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Year
+            </div>
+            <div class="project-info-value">2023 - 継続中</div>
+          </div>
+          <div class="project-info-item">
+            <div class="project-info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Scope
+            </div>
+            <div class="project-info-value">Instagram運用<br>映像制作・イベント撮影<br>コンテンツ企画</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUTUBE VIDEOS -->
+  <section class="video-section">
+    <div class="container">
+      <div class="video-section-label">Movie Gallery</div>
+      <h3 class="video-section-title">制作映像</h3>
+      <div class="video-grid">
+        <div class="video-card">
+          <a href="https://www.youtube.com/watch?v=XWirnjabCjQ" target="_blank" rel="noopener" class="video-card-thumb">
+            <img src="https://img.youtube.com/vi/XWirnjabCjQ/hqdefault.jpg" alt="学内業務DXプロジェクト ゴールムービー" loading="lazy">
+            <span class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg></span>
+          </a>
+          <div class="video-card-label">学内業務DXプロジェクト ゴールムービー</div>
+        </div>
+        <div class="video-card">
+          <a href="https://www.youtube.com/watch?v=yUThXPkuFSw" target="_blank" rel="noopener" class="video-card-thumb">
+            <img src="https://img.youtube.com/vi/yUThXPkuFSw/hqdefault.jpg" alt="北陽高等学校100周年記念式典映像" loading="lazy">
+            <span class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg></span>
+          </a>
+          <div class="video-card-label">北陽高等学校100周年記念式典映像</div>
+        </div>
+        <div class="video-card">
+          <a href="https://www.youtube.com/watch?v=DK7TWfQevv4" target="_blank" rel="noopener" class="video-card-thumb">
+            <img src="https://img.youtube.com/vi/DK7TWfQevv4/hqdefault.jpg" alt="リールムービー 卒業式編" loading="lazy">
+            <span class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg></span>
+          </a>
+          <div class="video-card-label">リールムービー｜卒業式編</div>
+        </div>
+        <div class="video-card">
+          <a href="https://www.youtube.com/watch?v=FkttUCiQT5w" target="_blank" rel="noopener" class="video-card-thumb">
+            <img src="https://img.youtube.com/vi/FkttUCiQT5w/hqdefault.jpg" alt="リールムービー 学位記授与式編" loading="lazy">
+            <span class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg></span>
+          </a>
+          <div class="video-card-label">リールムービー｜学位記授与式編</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTI-PROJECT SECTION -->
+  <section class="multi-project">
+    <div class="container">
+      <div class="multi-project-title">Related Projects</div>
+      <div class="project-cards">
+        <div class="project-card">
+          <img class="project-card-img" src="https://digitive.jp/wp-content/uploads/2025/09/関西大学_2-1.png" alt="関西大学 Instagram">
+          <div class="project-card-body">
+            <div class="project-card-tag">SNS / Content</div>
+            <h4>Instagram運用・コンテンツ制作</h4>
+            <p>公式Instagramのビジュアル設計、投稿企画、写真・短尺動画制作。大学ブランドに沿った統一感のある発信でフォロワーとエンゲージメントを向上。</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img class="project-card-img" src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-kansai-u.jpg" alt="関西大学 映像制作">
+          <div class="project-card-body">
+            <div class="project-card-tag">Video / Event</div>
+            <h4>学内イベント・施設紹介映像</h4>
+            <p>オープンキャンパスや学内イベントの記録映像、施設紹介映像を制作。大学の魅力を多角的に映像で発信。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="other-works">
+    <div class="container">
+      <div class="other-works-label">Other Works</div>
+      <h2 class="other-works-title">その他の制作実績</h2>
+      <div class="other-works-grid">
+        <a href="expo2025.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2025/04/S__153083919-e1750212946741.jpg" alt="大阪・関西万博">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Event / Digital Signage</div>
+            <h4>大阪・関西万博 2025</h4>
+            <p>飲食ブース サイネージ映像12本</p>
+          </div>
+        </a>
+        <a href="doshisha.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-doushisha.jpg" alt="同志社女子大学">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Education / Motion Graphics</div>
+            <h4>同志社女子大学</h4>
+            <p>AI教育プログラム プロモーション映像</p>
+          </div>
+        </a>
+        <a href="persol.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2024/10/persol-career.jpg" alt="パーソルキャリア">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Corporate / Web / Event</div>
+            <h4>パーソルキャリア</h4>
+            <p>イベント専用LP制作</p>
+          </div>
+        </a>
+        <a href="niyodohonpo.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2024/05/thumbnail-sanlio.jpg" alt="丹生堂本舗">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Photography / Branding</div>
+            <h4>丹生堂本舗</h4>
+            <p>商品撮影・マーケティング支援</p>
+          </div>
+        </a>
+        <a href="mizukara.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2024/10/goal-b.jpg" alt="ミズカラ">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Documentary / Event</div>
+            <h4>ミズカラ（Goal-B）</h4>
+            <p>ドキュメンタリー映像・イベント制作</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>まずはお気軽にご相談ください</h2>
+        <p>映像制作・写真撮影のご相談、お見積りは無料です。お気軽にお問い合わせください。</p>
+        <a href="../creative-lp.html#contact" class="btn-accent">無料相談・お見積り →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>&copy; 2025 株式会社digitive. All rights reserved.</span>
+        <a href="../creative-lp.html">トップページ</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>丹生堂本舗 | 制作実績 | 株式会社digitive</title>
+  <meta name="description" content="丹生堂本舗のサンリオキャラクターチョコの商品撮影を80枚以上担当。Amazonやカタログ向けの高品質な商品写真を制作。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Noto Sans JP', 'Inter', sans-serif; color: #111; background: #fff; line-height: 1.8; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    :root {
+      --accent: #e63946; --accent-hover: #c62f3b; --accent-light: #fef1f2;
+      --dark: #111111; --gray-700: #555555; --gray-500: #888888;
+      --gray-300: #cccccc; --gray-100: #f5f5f5; --white: #ffffff;
+      --shadow-md: 0 4px 24px rgba(0,0,0,0.1); --radius: 12px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { height: 24px; width: auto; }
+    .logo-text { font-size: 0.8rem; font-weight: 600; color: var(--gray-700); letter-spacing: 0.1em; border-left: 1px solid var(--gray-300); padding-left: 12px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 500; color: var(--gray-700); transition: color 0.3s; }
+    .back-link:hover { color: var(--accent); }
+    .back-link svg { width: 16px; height: 16px; }
+
+    .portfolio-hero { position: relative; width: 100%; height: 560px; margin-top: 72px; overflow: hidden; background: var(--dark); }
+    .portfolio-hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+    .portfolio-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 60px; }
+    .portfolio-hero-tag { display: inline-flex; background: var(--accent); color: var(--white); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; margin-bottom: 16px; width: fit-content; }
+    .portfolio-hero-title { font-size: 2.8rem; font-weight: 900; color: var(--white); line-height: 1.25; margin-bottom: 8px; }
+    .portfolio-hero-client { font-size: 1rem; color: rgba(255,255,255,0.6); }
+
+    .project-detail { padding: 80px 0; }
+    .project-grid { display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: start; }
+    .project-description h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; line-height: 1.5; }
+    .project-description p { font-size: 0.95rem; color: var(--gray-700); line-height: 2; margin-bottom: 20px; }
+    .project-info { background: var(--gray-100); border-radius: var(--radius); padding: 32px; }
+    .project-info-item { padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .project-info-item:first-child { padding-top: 0; }
+    .project-info-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .project-info-label { display: flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 6px; }
+    .project-info-label svg { width: 14px; height: 14px; stroke: var(--gray-500); }
+    .project-info-value { font-size: 0.92rem; font-weight: 600; color: var(--dark); line-height: 1.6; }
+
+    .scope-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+    .scope-tag { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--accent-light); border: 1px solid rgba(230,57,70,0.12); border-radius: 6px; font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+    .scope-tag svg { width: 14px; height: 14px; stroke: var(--accent); }
+
+    /* PHOTO GALLERY */
+    .photo-gallery { padding: 0 0 80px; }
+    .photo-gallery-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .photo-gallery-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; }
+    .photo-gallery-subtitle { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 24px; font-weight: 500; }
+    .photo-gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .photo-gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; transition: transform 0.4s; }
+    .photo-gallery-grid img:hover { transform: scale(1.05); }
+
+    /* STATS */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      padding: 0 0 80px;
+    }
+    .stat-card {
+      background: var(--gray-100); border-radius: var(--radius); padding: 32px; text-align: center;
+    }
+    .stat-number {
+      font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 900;
+      color: var(--accent); line-height: 1;
+    }
+    .stat-label { font-size: 0.82rem; color: var(--gray-700); margin-top: 8px; font-weight: 500; }
+
+    .other-works { padding: 80px 0; background: var(--gray-100); }
+    .other-works-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .other-works-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 40px; }
+    .other-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .work-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/10; background: var(--dark); transition: transform 0.4s; }
+    .work-card:hover { transform: translateY(-6px); }
+    .work-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; opacity: 0.85; }
+    .work-card:hover img { transform: scale(1.05); opacity: 1; }
+    .work-card-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; }
+    .work-card-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .work-card-overlay h4 { color: white; font-size: 0.95rem; font-weight: 700; }
+    .work-card-overlay p { color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-top: 2px; }
+
+    .cta-section { padding: 100px 0; background: var(--dark); text-align: center; color: white; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 150%; height: 150%; background: radial-gradient(ellipse, rgba(230,57,70,0.1) 0%, transparent 55%); }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-content h2 { font-size: 2rem; font-weight: 900; margin-bottom: 16px; }
+    .cta-content p { font-size: 0.95rem; color: rgba(255,255,255,0.5); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-accent { display: inline-flex; align-items: center; gap: 8px; padding: 16px 40px; background: var(--accent); color: var(--white); border-radius: 4px; font-size: 0.95rem; font-weight: 700; transition: all 0.3s; }
+    .btn-accent:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(230,57,70,0.4); }
+
+    .footer { background: #0a0a0a; color: rgba(255,255,255,0.4); padding: 32px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; }
+    .footer-inner a { color: rgba(255,255,255,0.4); transition: color 0.3s; }
+    .footer-inner a:hover { color: var(--accent); }
+
+    @media (max-width: 1024px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); }
+      .other-works-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .portfolio-hero { height: 400px; }
+      .portfolio-hero-overlay { padding: 32px 24px; }
+      .portfolio-hero-title { font-size: 1.8rem; }
+      .stats-row { grid-template-columns: 1fr; }
+      .other-works-grid { grid-template-columns: 1fr; }
+      .cta-content h2 { font-size: 1.5rem; }
+      .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="../creative-lp.html" class="logo">
+        <img src="../assets/logos/digitive_black.png" alt="digitive">
+        <span class="logo-text">映像制作 / 写真撮影</span>
+      </a>
+      <a href="../creative-lp.html" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        トップに戻る
+      </a>
+    </div>
+  </header>
+
+  <section class="portfolio-hero">
+    <img src="https://digitive.jp/wp-content/uploads/2024/05/thumbnail-sanlio.jpg" alt="丹生堂本舗 サンリオキャラクターチョコ">
+    <div class="portfolio-hero-overlay">
+      <div class="portfolio-hero-tag">Photography / Branding</div>
+      <h1 class="portfolio-hero-title">丹生堂本舗</h1>
+      <p class="portfolio-hero-client">サンリオキャラクターチョコ 商品撮影・マーケティング支援</p>
+    </div>
+  </section>
+
+  <section class="project-detail">
+    <div class="container">
+      <div class="project-grid">
+        <div class="project-description">
+          <h2>80枚以上の商品写真で<br>ブランドの魅力を最大化</h2>
+          <p>大阪府の老舗菓子メーカー・丹生堂本舗様のサンリオキャラクターチョコレートシリーズの商品撮影を担当しました。</p>
+          <p>Amazon出品用、カタログ・パンフレット用、SNS投稿用など、用途に応じた80枚以上の商品写真を撮影。キャラクターの可愛らしさと商品のクオリティが伝わるライティングと構図にこだわり、購買意欲を刺激するビジュアルに仕上げました。</p>
+          <p>パッケージ全体のショットから、個包装のディテール、開封シーン、生活空間でのイメージカットまで、バリエーション豊かな写真を提供。ECサイトでの売上向上とブランドイメージの強化に貢献しています。</p>
+          <div class="scope-tags">
+            <span class="scope-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              商品撮影 80枚+
+            </span>
+            <span class="scope-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              レタッチ・色補正
+            </span>
+            <span class="scope-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              Amazon・EC向け最適化
+            </span>
+          </div>
+        </div>
+        <aside class="project-info">
+          <div class="project-info-item">
+            <div class="project-info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Client
+            </div>
+            <div class="project-info-value">丹生堂本舗</div>
+          </div>
+          <div class="project-info-item">
+            <div class="project-info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              Type
+            </div>
+            <div class="project-info-value">Photography / Branding</div>
+          </div>
+          <div class="project-info-item">
+            <div class="project-info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Year
+            </div>
+            <div class="project-info-value">2024</div>
+          </div>
+          <div class="project-info-item">
+            <div class="project-info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Scope
+            </div>
+            <div class="project-info-value">商品撮影 80枚以上<br>レタッチ・色補正<br>EC向け画像最適化</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY - サンリオ セレクト -->
+  <section class="photo-gallery">
+    <div class="container">
+      <div class="photo-gallery-label">Photo Gallery</div>
+      <h3 class="photo-gallery-title">サンリオボックス 春夏コレクション</h3>
+      <div class="photo-gallery-grid">
+        <img src="https://digitive.jp/wp-content/uploads/2024/05/20240405-01-【サンリオ-セレクト】.jpg" alt="サンリオチョコ 1" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/05/20240405-02-【サンリオ-セレクト】.jpg" alt="サンリオチョコ 2" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/05/20240405-03-【サンリオ-セレクト】.jpg" alt="サンリオチョコ 3" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/05/20240405-04-【サンリオ-セレクト】.jpg" alt="サンリオチョコ 4" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/05/20240405-05-【サンリオ-セレクト】.jpg" alt="サンリオチョコ 5" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/05/20240405-06-【サンリオ-セレクト】.jpg" alt="サンリオチョコ 6" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/05/20240405-07-【サンリオ-セレクト】.jpg" alt="サンリオチョコ 7" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/05/20240405-08-【サンリオ-セレクト】.jpg" alt="サンリオチョコ 8" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY - 秋冬コレクション -->
+  <section class="photo-gallery">
+    <div class="container">
+      <h3 class="photo-gallery-title">秋冬コレクション</h3>
+      <div class="photo-gallery-grid">
+        <img src="https://digitive.jp/wp-content/uploads/2024/07/tanwado-1.jpg" alt="秋冬コレクション 1" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/07/tanwado-2.jpg" alt="秋冬コレクション 2" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/07/tanwado-3.jpg" alt="秋冬コレクション 3" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/07/tanwado-4.jpg" alt="秋冬コレクション 4" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/07/tanwado-5.jpg" alt="秋冬コレクション 5" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/07/tanwado-6.jpg" alt="秋冬コレクション 6" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/07/tanwado-7.jpg" alt="秋冬コレクション 7" loading="lazy">
+        <img src="https://digitive.jp/wp-content/uploads/2024/07/tanwado-8.jpg" alt="秋冬コレクション 8" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-row">
+    <div class="container" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="stat-card">
+        <div class="stat-number">80+</div>
+        <div class="stat-label">撮影枚数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">用途（EC / カタログ / SNS）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1day</div>
+        <div class="stat-label">撮影期間</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="other-works">
+    <div class="container">
+      <div class="other-works-label">Other Works</div>
+      <h2 class="other-works-title">その他の制作実績</h2>
+      <div class="other-works-grid">
+        <a href="expo2025.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2025/04/S__153083919-e1750212946741.jpg" alt="大阪・関西万博">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Event / Digital Signage</div>
+            <h4>大阪・関西万博 2025</h4>
+            <p>飲食ブース サイネージ映像12本</p>
+          </div>
+        </a>
+        <a href="doshisha.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-doushisha.jpg" alt="同志社女子大学">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Education / Motion Graphics</div>
+            <h4>同志社女子大学</h4>
+            <p>AI教育プログラム プロモーション映像</p>
+          </div>
+        </a>
+        <a href="kansai-u.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2025/09/関西大学_2-1.png" alt="関西大学">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">University / SNS / Event</div>
+            <h4>関西大学</h4>
+            <p>Instagram運用・映像制作</p>
+          </div>
+        </a>
+        <a href="persol.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2024/10/persol-career.jpg" alt="パーソルキャリア">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Corporate / Web / Event</div>
+            <h4>パーソルキャリア</h4>
+            <p>イベント専用LP制作</p>
+          </div>
+        </a>
+        <a href="mizukara.html" class="work-card">
+          <img src="https://digitive.jp/wp-content/uploads/2024/10/goal-b.jpg" alt="ミズカラ">
+          <div class="work-card-overlay">
+            <div class="work-card-tag">Documentary / Event</div>
+            <h4>ミズカラ（Goal-B）</h4>
+            <p>ドキュメンタリー映像・イベント制作</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>まずはお気軽にご相談ください</h2>
+        <p>映像制作・写真撮影のご相談、お見積りは無料です。お気軽にお問い合わせください。</p>
+        <a href="../creative-lp.html#contact" class="btn-accent">無料相談・お見積り →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>&copy; 2025 株式会社digitive. All rights reserved.</span>
+        <a href="../creative-lp.html">トップページ</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
