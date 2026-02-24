@@ -380,7 +380,7 @@ if (!defined('ABSPATH')) { exit; }
 
   <!-- CLIENT LOGO MARQUEE -->
   <section class="logo-marquee-section">
-    <p class="logo-marquee-label">業種・規模を問わず <strong>70社以上</strong> の企業・大学・団体を支援</p>
+    <p class="logo-marquee-label">大手企業から大学・自治体まで、<strong>70社以上</strong>の弊社取引先</p>
     <div class="marquee-wrapper">
       <div class="marquee-track">
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/nissan.png" alt="日産自動車" style="height:26px;"></div>
@@ -394,6 +394,7 @@ if (!defined('ABSPATH')) { exit; }
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/infocom.jpg" alt="インフォコム" style="height:26px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kaneka.png" alt="カネカ" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="コノミヤ" style="height:28px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/niyodohonpo.png" alt="丹生堂本舗" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/masuda.png" alt="マスダエーセイ" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/sio.png" alt="SIO" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/station-ai.png" alt="Station AI" style="height:28px;"></div>
@@ -409,6 +410,7 @@ if (!defined('ABSPATH')) { exit; }
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/infocom.jpg" alt="インフォコム" style="height:26px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kaneka.png" alt="カネカ" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="コノミヤ" style="height:28px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/niyodohonpo.png" alt="丹生堂本舗" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/masuda.png" alt="マスダエーセイ" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/sio.png" alt="SIO" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/station-ai.png" alt="Station AI" style="height:28px;"></div>
@@ -416,33 +418,35 @@ if (!defined('ABSPATH')) { exit; }
     </div>
     <div class="marquee-wrapper" style="margin-top: 14px;">
       <div class="marquee-track marquee-track-reverse">
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/expo2025-og.jpg" alt="大阪・関西万博" style="height:28px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/expo2025-og.jpg" alt="大阪・関西万博 2025" style="height:28px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/osaka-pref-apple.jpg" alt="大阪府" style="height:28px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kerry.png" alt="KERRY" style="height:24px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/suita-jc.png" alt="吹田JC" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/ims.jpg" alt="分子科学研究所" style="height:26px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/mizukara.png" alt="ミズカラ" style="height:22px;"></div>
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/niyodohonpo.png" alt="丹生堂本舗" style="height:24px;"></div>
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/suita-jc.png" alt="吹田JC" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/fullhouse.svg" alt="フルハウス" style="height:24px;"></div>
-        <div class="marquee-item"><span class="client-name">始動 Next Innovator</span></div>
-        <div class="marquee-item"><span class="client-name">北陸万博</span></div>
-        <div class="marquee-item"><span class="client-name">ナノヒューマンプロ</span></div>
-        <div class="marquee-item"><span class="client-name">関西みらいWay</span></div>
-        <div class="marquee-item"><span class="client-name">LUANA</span></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kaneka-new.png" alt="カネカ" style="height:22px;"></div>
+        <div class="marquee-item"><span class="client-text">始動 Next Innovator</span></div>
+        <div class="marquee-item"><span class="client-text">北陸万博</span></div>
+        <div class="marquee-item"><span class="client-text">スペランツァ</span></div>
+        <div class="marquee-item"><span class="client-text">ナノヒューマンプロ</span></div>
+        <div class="marquee-item"><span class="client-text">士業育成財団</span></div>
+        <div class="marquee-item"><span class="client-text">LUANA</span></div>
         <!-- duplicate -->
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/expo2025-og.jpg" alt="大阪・関西万博" style="height:28px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/expo2025-og.jpg" alt="大阪・関西万博 2025" style="height:28px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/osaka-pref-apple.jpg" alt="大阪府" style="height:28px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kerry.png" alt="KERRY" style="height:24px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/suita-jc.png" alt="吹田JC" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/ims.jpg" alt="分子科学研究所" style="height:26px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/mizukara.png" alt="ミズカラ" style="height:22px;"></div>
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/niyodohonpo.png" alt="丹生堂本舗" style="height:24px;"></div>
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/suita-jc.png" alt="吹田JC" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/fullhouse.svg" alt="フルハウス" style="height:24px;"></div>
-        <div class="marquee-item"><span class="client-name">始動 Next Innovator</span></div>
-        <div class="marquee-item"><span class="client-name">北陸万博</span></div>
-        <div class="marquee-item"><span class="client-name">ナノヒューマンプロ</span></div>
-        <div class="marquee-item"><span class="client-name">関西みらいWay</span></div>
-        <div class="marquee-item"><span class="client-name">LUANA</span></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kaneka-new.png" alt="カネカ" style="height:22px;"></div>
+        <div class="marquee-item"><span class="client-text">始動 Next Innovator</span></div>
+        <div class="marquee-item"><span class="client-text">北陸万博</span></div>
+        <div class="marquee-item"><span class="client-text">スペランツァ</span></div>
+        <div class="marquee-item"><span class="client-text">ナノヒューマンプロ</span></div>
+        <div class="marquee-item"><span class="client-text">士業育成財団</span></div>
+        <div class="marquee-item"><span class="client-text">LUANA</span></div>
       </div>
     </div>
   </section>
