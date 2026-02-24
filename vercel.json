@@ -13,6 +13,14 @@
   ],
   "rewrites": [
     {
+      "source": "/creative/",
+      "destination": "/dist/creative/index.html"
+    },
+    {
+      "source": "/kachitto/",
+      "destination": "/dist/kachitto/index.html"
+    },
+    {
       "source": "/creative/:path*",
       "destination": "/dist/creative/:path*"
     },
