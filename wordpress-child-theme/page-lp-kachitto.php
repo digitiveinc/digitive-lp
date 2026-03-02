@@ -340,7 +340,7 @@ if (!defined('ABSPATH')) { exit; }
               <div class="hero-stat-label">支援企業数</div>
             </div>
             <div>
-              <div class="hero-stat-number">200<span>店舗</span></div>
+              <div class="hero-stat-number">数百<span>店舗</span></div>
               <div class="hero-stat-label">大型導入実績</div>
             </div>
             <div>
