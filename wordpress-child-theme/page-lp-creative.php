@@ -866,7 +866,7 @@ if (!defined('ABSPATH')) { exit; }
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/benefit-one.png" alt="ベネフィットワン" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/infocom.jpg" alt="インフォコム" style="height:26px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kaneka.png" alt="カネカ" style="height:24px;"></div>
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="コノミヤ" style="height:28px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="某スーパーチェーン" style="height:28px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/niyodohonpo.png" alt="丹生堂本舗" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/masuda.png" alt="マスダエーセイ" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/sio.png" alt="SIO" style="height:22px;"></div>
@@ -882,7 +882,7 @@ if (!defined('ABSPATH')) { exit; }
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/benefit-one.png" alt="ベネフィットワン" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/infocom.jpg" alt="インフォコム" style="height:26px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kaneka.png" alt="カネカ" style="height:24px;"></div>
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="コノミヤ" style="height:28px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="某スーパーチェーン" style="height:28px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/niyodohonpo.png" alt="丹生堂本舗" style="height:24px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/masuda.png" alt="マスダエーセイ" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/sio.png" alt="SIO" style="height:22px;"></div>

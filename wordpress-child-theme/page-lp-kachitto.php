@@ -385,7 +385,7 @@ if (!defined('ABSPATH')) { exit; }
       <div class="marquee-track">
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-14-22.57.17-e1771077495669.png" alt="富山大学様"></div>
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/unnamed-e1770574476122.jpg" alt="株式会社キャピタルスポーツ"></div>
-        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-02-16.47.09-e1770018760154.png" alt="株式会社コノミヤ"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-02-16.47.09-e1770018760154.png" alt="某スーパーチェーン"></div>
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/11/ChatGPT-2025年11月29日-画像.png" alt="スリーメンジャパン株式会社"></div>
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/11/ChatGPT-Image-Nov-17-2025.png" alt="メイトク株式会社"></div>
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/OIP.jpg" alt="関西大学様"></div>
@@ -402,7 +402,7 @@ if (!defined('ABSPATH')) { exit; }
         <!-- duplicate for seamless -->
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-14-22.57.17-e1771077495669.png" alt="富山大学様"></div>
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/unnamed-e1770574476122.jpg" alt="株式会社キャピタルスポーツ"></div>
-        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-02-16.47.09-e1770018760154.png" alt="株式会社コノミヤ"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-02-16.47.09-e1770018760154.png" alt="某スーパーチェーン"></div>
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/11/ChatGPT-2025年11月29日-画像.png" alt="スリーメンジャパン株式会社"></div>
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/11/ChatGPT-Image-Nov-17-2025.png" alt="メイトク株式会社"></div>
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/OIP.jpg" alt="関西大学様"></div>
@@ -594,16 +594,16 @@ if (!defined('ABSPATH')) { exit; }
       </div>
       <div class="case-card reveal">
         <div class="case-card-img">
-          <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="スーパーコノミヤ" style="height: 280px; object-fit: contain; background: white; padding: 40px;">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="某スーパーチェーン" style="height: 280px; object-fit: contain; background: white; padding: 40px;">
         </div>
         <div class="case-card-body">
-          <span class="case-badge">多店舗チェーン / 200店舗</span>
-          <h3>スーパーコノミヤ様</h3>
+          <span class="case-badge">多店舗チェーン / 数百店舗</span>
+          <h3>某スーパーチェーン様</h3>
           <p>マニュアルは整備されていたものの、現場で活用されず本部への問い合わせが絶えない状態。カチットを導入し、現場で聞かれた質問をそのまま学習に反映する仕組みを構築。</p>
           <p>LINEベースのAIチャットボットで、店舗スタッフが即座に疑問を解決できる環境を実現しています。</p>
           <div class="case-metrics">
             <div class="case-metric">
-              <div class="case-metric-val">200<span>店舗</span></div>
+              <div class="case-metric-val">数百<span>店舗</span></div>
               <div class="case-metric-label">対象店舗数</div>
             </div>
             <div class="case-metric">

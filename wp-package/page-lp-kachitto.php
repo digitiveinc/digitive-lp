@@ -393,7 +393,7 @@ if (!defined('ABSPATH')) { exit; }
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/benefit-one.png" alt="ベネフィットワン" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/infocom.jpg" alt="インフォコム" style="height:26px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kaneka.png" alt="カネカ" style="height:24px;"></div>
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="コノミヤ" style="height:28px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="某スーパーチェーン" style="height:28px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/masuda.png" alt="マスダエーセイ" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/sio.png" alt="SIO" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/station-ai.png" alt="Station AI" style="height:28px;"></div>
@@ -408,7 +408,7 @@ if (!defined('ABSPATH')) { exit; }
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/benefit-one.png" alt="ベネフィットワン" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/infocom.jpg" alt="インフォコム" style="height:26px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/kaneka.png" alt="カネカ" style="height:24px;"></div>
-        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="コノミヤ" style="height:28px;"></div>
+        <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="某スーパーチェーン" style="height:28px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/masuda.png" alt="マスダエーセイ" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/sio.png" alt="SIO" style="height:22px;"></div>
         <div class="marquee-item"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/station-ai.png" alt="Station AI" style="height:28px;"></div>
@@ -586,16 +586,16 @@ if (!defined('ABSPATH')) { exit; }
       </div>
       <div class="case-card reveal">
         <div class="case-card-img">
-          <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="スーパーコノミヤ" style="height: 280px; object-fit: contain; background: white; padding: 40px;">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/konomiya.png" alt="某スーパーチェーン" style="height: 280px; object-fit: contain; background: white; padding: 40px;">
         </div>
         <div class="case-card-body">
-          <span class="case-badge">多店舗チェーン / 200店舗</span>
-          <h3>スーパーコノミヤ様</h3>
+          <span class="case-badge">多店舗チェーン / 数百店舗</span>
+          <h3>某スーパーチェーン様</h3>
           <p>マニュアルは整備されていたものの、現場で活用されず本部への問い合わせが絶えない状態。カチットを導入し、現場で聞かれた質問をそのまま学習に反映する仕組みを構築。</p>
           <p>LINEベースのAIチャットボットで、店舗スタッフが即座に疑問を解決できる環境を実現しています。</p>
           <div class="case-metrics">
             <div class="case-metric">
-              <div class="case-metric-val">200<span>店舗</span></div>
+              <div class="case-metric-val">数百<span>店舗</span></div>
               <div class="case-metric-label">対象店舗数</div>
             </div>
             <div class="case-metric">
