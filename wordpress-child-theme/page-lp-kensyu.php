@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) { exit; }
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI研修 | 株式会社digitive - 「研修」で終わらない研修を。</title>
-  <meta name="description" content="AI・DX研修なら株式会社digitive。元教師×AI企業だからできる、実務に直結する研修設計。企画から定着支援まで伴走。大学・企業70社以上の支援実績。">
+  <meta name="description" content="AI・DX研修なら株式会社digitive。AI企業だからできる、実務に直結する研修設計。企画から定着支援まで伴走。大学・企業70社以上の支援実績。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -83,8 +83,11 @@ if (!defined('ABSPATH')) { exit; }
     .hero::before { content: ''; position: absolute; top: -20%; right: -15%; width: 60%; height: 140%; background: radial-gradient(ellipse, rgba(13,148,136,0.06) 0%, transparent 70%); pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: -10%; left: -10%; width: 40%; height: 80%; background: radial-gradient(ellipse, rgba(245,158,11,0.04) 0%, transparent 70%); pointer-events: none; }
     .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--primary-light); border: 1px solid rgba(13,148,136,0.15); border-radius: 60px; padding: 6px 16px; font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 24px; }
+    .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--primary-light); border: 1px solid rgba(13,148,136,0.15); border-radius: 60px; padding: 6px 16px; font-size: 0.78rem; font-weight: 600; color: var(--primary); }
     .hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--primary); border-radius: 50%; animation: pulse 2s infinite; }
+    .hero-badge.badge-gold { background: var(--accent-light); border-color: rgba(245,158,11,0.2); color: var(--accent-hover); }
+    .hero-badge.badge-gold::before { background: var(--accent); }
     @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
     .hero-title { font-size: 2.8rem; font-weight: 900; line-height: 1.3; color: var(--dark); margin-bottom: 24px; }
     .hero-title .highlight { background: linear-gradient(transparent 60%, rgba(13,148,136,0.15) 60%); }
@@ -512,7 +515,7 @@ if (!defined('ABSPATH')) { exit; }
         <a href="#problem">よくある課題</a>
         <a href="#features">選ばれる理由</a>
         <a href="#menu">研修メニュー</a>
-        <a href="#flow">導入の流れ</a>
+        <a href="#flow">研修までの流れ</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="header-cta">
@@ -529,14 +532,17 @@ if (!defined('ABSPATH')) { exit; }
     <div class="container">
       <div class="hero-inner">
         <div class="hero-text">
-          <div class="hero-badge">SIO ACCELERATION 2025 採択</div>
+          <div class="hero-badges">
+            <div class="hero-badge">SIO ACCELERATION 2025 採択</div>
+            <div class="hero-badge badge-gold">大阪府DX推進パートナーズ</div>
+          </div>
           <h1 class="hero-title">
             <span class="highlight">「研修」で終わらない</span><br>
             <span class="accent-text">AI研修</span>を。
           </h1>
           <p class="hero-description">
-            元教師×AI企業だからできる、<br>
-            実務に直結する研修設計。<br>
+            AI企業だからできる、実務に直結する研修設計。<br>
+            GitHub Copilotの導入研修にも対応。<br>
             企画・実施・定着まで、すべて伴走します。
           </p>
           <div class="btn-group">
@@ -613,7 +619,7 @@ if (!defined('ABSPATH')) { exit; }
 
   <!-- CLIENT LOGO MARQUEE -->
   <section class="logo-marquee-section">
-    <p class="logo-marquee-label">大手企業から大学・自治体まで、多数の<strong>研修パートナー</strong></p>
+    <p class="logo-marquee-label">大手企業から大学・自治体まで、多数の<strong>クライアント</strong></p>
     <div class="marquee-wrapper">
       <div class="marquee-track">
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-14-22.57.17-e1771077495669.png" alt="富山大学様"></div>
@@ -751,7 +757,7 @@ if (!defined('ABSPATH')) { exit; }
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
             </div>
             <h3>面白い研修体験</h3>
-            <p>元教師の講師が、広告・動画制作の知見を活かし「伝わる」研修を実現。眠くならない90分をお約束。</p>
+            <p>広告・動画制作の知見を活かし「伝わる」研修を実現。眠くならない90分をお約束します。</p>
           </div>
           <div class="concept-pillar reveal">
             <div class="pillar-icon">
@@ -771,7 +777,7 @@ if (!defined('ABSPATH')) { exit; }
       <div class="text-center reveal">
         <span class="section-label">Why digitive</span>
         <h2 class="section-title">digitiveが選ばれる理由</h2>
-        <p class="section-subtitle">AI企業であり、元教師がいるから。研修の「内容」と「伝え方」の両方にこだわります。</p>
+        <p class="section-subtitle">AI企業だからこその「内容」と「伝え方」の両方にこだわります。</p>
       </div>
       <div class="features-grid">
         <div class="feature-card reveal">
@@ -788,9 +794,9 @@ if (!defined('ABSPATH')) { exit; }
           <div class="feature-card-icon" style="background: var(--accent-light);">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3>元教師だから「伝え方」が違う</h3>
-          <p>教壇に立ってきた経験を持つ講師だからこそ、「初心者でも分かる」を徹底。専門用語を噛み砕き、全員が「自分でもできそう」と思える研修を設計します。</p>
-          <span class="feature-card-tag">教育のプロの技術</span>
+          <h3>「伝え方」が違う——教育のプロの技術</h3>
+          <p>「初心者でも分かる」を徹底。専門用語を噛み砕き、全員が「自分でもできそう」と思える研修を設計します。GitHub Copilotなど開発者向けAIツールの導入研修にも対応。</p>
+          <span class="feature-card-tag">Copilot導入研修にも対応</span>
         </div>
         <div class="feature-card reveal">
           <div class="feature-card-number">03</div>
@@ -927,7 +933,7 @@ if (!defined('ABSPATH')) { exit; }
     <div class="container">
       <div class="text-center reveal">
         <span class="section-label">Flow</span>
-        <h2 class="section-title">導入の流れ</h2>
+        <h2 class="section-title">研修までの流れ</h2>
         <p class="section-subtitle">お問い合わせから研修実施、定着支援まで。安心のプロセスで進めます。</p>
       </div>
       <div class="flow-timeline">
@@ -987,8 +993,8 @@ if (!defined('ABSPATH')) { exit; }
       </div>
       <div class="team-content reveal">
         <div class="team-info">
-          <h3>元教師×AI企業。<br>だから伝わる、使える。</h3>
-          <p>digitiveの研修講師は、教壇に立った経験とAI企業での実務経験の両方を持っています。</p>
+          <h3>AI企業のプロ集団。<br>だから伝わる、使える。</h3>
+          <p>digitiveの研修講師は、AI企業での実務経験を持つプロフェッショナルです。</p>
           <p>「分かりやすく伝える力」と「最新AIの実践知識」を組み合わせ、受講者全員が「明日から使える」状態を目指します。</p>
           <div class="team-highlights">
             <div class="team-highlight">
@@ -996,8 +1002,8 @@ if (!defined('ABSPATH')) { exit; }
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
               </div>
               <div>
-                <h4>元教師の講師陣</h4>
-                <p>教育のプロの「伝え方」</p>
+                <h4>教育経験のある講師陣</h4>
+                <p>分かりやすく伝えるプロ</p>
               </div>
             </div>
             <div class="team-highlight">

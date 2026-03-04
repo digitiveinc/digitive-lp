@@ -852,7 +852,7 @@ if (!defined('ABSPATH')) { exit; }
 
   <!-- CLIENT LOGO MARQUEE -->
   <section class="logo-marquee-section">
-    <p class="logo-marquee-label">大手企業から大学・自治体まで、<strong>70社以上</strong>のクリエイティブパートナー</p>
+    <p class="logo-marquee-label">大手企業から大学・自治体まで、多数の<strong>クライアント</strong></p>
     <div class="marquee-wrapper">
       <div class="marquee-track">
         <!-- Row 1: Logos -->

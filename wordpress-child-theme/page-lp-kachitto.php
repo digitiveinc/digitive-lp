@@ -380,7 +380,7 @@ if (!defined('ABSPATH')) { exit; }
 
   <!-- CLIENT LOGO MARQUEE -->
   <section class="logo-marquee-section">
-    <p class="logo-marquee-label">大手企業から大学・自治体まで、多数の<strong>クリエイティブパートナー</strong></p>
+    <p class="logo-marquee-label">大手企業から大学・自治体まで、多数の<strong>クライアント</strong></p>
     <div class="marquee-wrapper">
       <div class="marquee-track">
         <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-14-22.57.17-e1771077495669.png" alt="富山大学様"></div>
