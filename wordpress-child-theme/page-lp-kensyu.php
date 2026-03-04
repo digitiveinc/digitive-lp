@@ -1,0 +1,1257 @@
+<?php
+/*
+Template Name: LP Kensyu Standalone
+*/
+if (!defined('ABSPATH')) { exit; }
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI研修 | 株式会社digitive - 「研修」で終わらない研修を。</title>
+  <meta name="description" content="AI・DX研修なら株式会社digitive。元教師×AI企業だからできる、実務に直結する研修設計。企画から定着支援まで伴走。大学・企業70社以上の支援実績。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Noto Sans JP', 'Inter', sans-serif; color: #1a2332; background: #fff; line-height: 1.8; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    :root {
+      --primary: #0d9488;
+      --primary-dark: #0a7a70;
+      --primary-light: #e6f7f5;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --accent-light: #fef9e7;
+      --dark: #1a2332;
+      --gray-900: #2d3748;
+      --gray-700: #4a5568;
+      --gray-500: #718096;
+      --gray-300: #cbd5e0;
+      --gray-100: #f7fafc;
+      --white: #ffffff;
+      --gradient-primary: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+      --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+      --gradient-dark: linear-gradient(135deg, #1a2332 0%, #2d3748 100%);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+      --shadow-xl: 0 16px 60px rgba(0,0,0,0.16);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary); margin-bottom: 12px; }
+    .section-title { font-size: 2.2rem; font-weight: 900; line-height: 1.3; margin-bottom: 20px; letter-spacing: -0.02em; }
+    .section-subtitle { font-size: 1.05rem; color: var(--gray-500); max-width: 640px; margin: 0 auto 60px; }
+    .text-center { text-align: center; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 36px; border-radius: 60px; font-size: 1rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; }
+    .btn-accent { background: var(--gradient-accent); color: var(--dark); box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35); }
+    .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(245, 158, 11, 0.5); }
+    .btn-primary { background: var(--gradient-primary); color: var(--white); box-shadow: 0 4px 20px rgba(13, 148, 136, 0.35); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(13, 148, 136, 0.5); }
+    .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+    .btn-outline:hover { background: var(--primary); color: white; }
+    .btn-white { background: var(--white); color: var(--primary); box-shadow: var(--shadow-md); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* HEADER */
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); transition: all 0.3s ease; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo img { height: 22px; }
+    .logo-divider { width: 1px; height: 20px; background: var(--gray-300); margin: 0 4px; }
+    .logo-product { font-size: 1rem; font-weight: 900; color: var(--primary); }
+    .header-nav { display: flex; align-items: center; gap: 32px; }
+    .header-nav a { font-size: 0.85rem; font-weight: 500; color: var(--gray-700); transition: color 0.3s; }
+    .header-nav a:hover { color: var(--primary); }
+    .header-cta .btn { padding: 10px 24px; font-size: 0.85rem; }
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; width: 32px; height: 32px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+    .mobile-menu-btn span { display: block; width: 24px; height: 2px; background: var(--dark); transition: all 0.3s; }
+
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%); overflow: hidden; padding-top: 72px; }
+    .hero::before { content: ''; position: absolute; top: -20%; right: -15%; width: 60%; height: 140%; background: radial-gradient(ellipse, rgba(13,148,136,0.06) 0%, transparent 70%); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; bottom: -10%; left: -10%; width: 40%; height: 80%; background: radial-gradient(ellipse, rgba(245,158,11,0.04) 0%, transparent 70%); pointer-events: none; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--primary-light); border: 1px solid rgba(13,148,136,0.15); border-radius: 60px; padding: 6px 16px; font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 24px; }
+    .hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--primary); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
+    .hero-title { font-size: 2.8rem; font-weight: 900; line-height: 1.3; color: var(--dark); margin-bottom: 24px; }
+    .hero-title .highlight { background: linear-gradient(transparent 60%, rgba(13,148,136,0.15) 60%); }
+    .hero-title .accent-text { color: var(--primary); }
+    .hero-description { font-size: 1.05rem; color: var(--gray-500); margin-bottom: 40px; line-height: 1.9; }
+    .hero-stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--gray-100); }
+    .hero-stat-number { font-family: 'Inter', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--dark); }
+    .hero-stat-number span { color: var(--primary); }
+    .hero-stat-label { font-size: 0.8rem; color: var(--gray-500); margin-top: 4px; }
+
+    /* HERO VISUAL */
+    .hero-visual { position: relative; }
+    .hero-visual-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--gradient-primary);
+    }
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .hero-card-icon {
+      width: 48px; height: 48px;
+      background: var(--gradient-primary);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-card-title { font-size: 1.1rem; font-weight: 800; color: var(--dark); }
+    .hero-card-subtitle { font-size: 0.75rem; color: var(--gray-500); }
+    .hero-curriculum {
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .hero-curriculum-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      transition: all 0.3s;
+    }
+    .hero-curriculum-item:hover { background: var(--primary-light); transform: translateX(4px); }
+    .curriculum-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem; font-weight: 900;
+      color: var(--primary);
+      background: rgba(13,148,136,0.1);
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .curriculum-text { font-size: 0.85rem; font-weight: 600; color: var(--gray-700); }
+    .floating-badge { position: absolute; background: white; border-radius: var(--radius); padding: 12px 16px; box-shadow: var(--shadow-lg); font-size: 0.8rem; display: flex; align-items: center; gap: 10px; }
+    .floating-badge-1 { top: 8%; right: -16%; animation: floatSlow 5s ease-in-out infinite; }
+    .floating-badge-2 { bottom: 8%; left: -14%; animation: floatSlow 5s ease-in-out infinite 2s; }
+    @keyframes floatSlow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .badge-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: white; }
+    .badge-text-val { font-weight: 900; font-size: 0.95rem; color: var(--dark); }
+    .badge-text-label { font-size: 0.65rem; color: var(--gray-500); }
+
+    /* LOGO MARQUEE */
+    .logo-marquee-section { padding: 56px 0; background: var(--white); border-bottom: 1px solid var(--gray-100); }
+    .logo-marquee-label { text-align: center; font-size: 0.85rem; color: var(--gray-500); margin-bottom: 28px; font-weight: 500; letter-spacing: 0.05em; }
+    .logo-marquee-label strong { color: var(--dark); font-weight: 700; }
+    .marquee-wrapper { overflow: hidden; position: relative; }
+    .marquee-wrapper::before, .marquee-wrapper::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
+    .marquee-wrapper::before { left: 0; background: linear-gradient(to right, white, transparent); }
+    .marquee-wrapper::after { right: 0; background: linear-gradient(to left, white, transparent); }
+    .marquee-track { display: flex; gap: 40px; animation: marquee 60s linear infinite; width: max-content; align-items: center; }
+    .marquee-track-reverse { animation-direction: reverse; animation-duration: 65s; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .marquee-item { flex-shrink: 0; height: 44px; display: flex; align-items: center; justify-content: center; padding: 0 8px; transition: all 0.3s ease; }
+    .marquee-item img { height: 26px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.45; transition: all 0.3s; }
+    .marquee-item:hover img { filter: grayscale(0%); opacity: 1; }
+    .marquee-item .client-text { font-size: 0.85rem; font-weight: 700; color: var(--gray-700); white-space: nowrap; letter-spacing: 0.08em; opacity: 0.45; transition: all 0.3s; }
+    .marquee-item:hover .client-text { opacity: 1; }
+
+    /* PROBLEM */
+    .problem-section { padding: 100px 0; background: var(--white); }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .problem-card {
+      background: var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+      position: relative;
+    }
+    .problem-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(13,148,136,0.12); }
+    .problem-card-icon {
+      width: 64px; height: 64px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.6rem;
+    }
+    .problem-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
+    .problem-card p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.7; }
+    .problem-card-num {
+      position: absolute;
+      top: 16px; right: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem; font-weight: 900;
+      color: var(--primary);
+      opacity: 0.08;
+    }
+
+    /* CONCEPT */
+    .concept-section { padding: 100px 0; background: var(--gradient-primary); color: white; position: relative; overflow: hidden; }
+    .concept-section::before { content: ''; position: absolute; top: -30%; right: -10%; width: 50%; height: 160%; background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 60%); pointer-events: none; }
+    .concept-inner { position: relative; z-index: 1; text-align: center; max-width: 800px; margin: 0 auto; }
+    .concept-inner .section-label { color: rgba(255,255,255,0.6); }
+    .concept-title { font-size: 2.6rem; font-weight: 900; line-height: 1.3; margin-bottom: 28px; }
+    .concept-title em { font-style: normal; color: var(--accent); }
+    .concept-description { font-size: 1.1rem; color: rgba(255,255,255,0.75); line-height: 1.9; margin-bottom: 48px; }
+    .concept-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .concept-pillar {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .concept-pillar:hover { background: rgba(255,255,255,0.14); transform: translateY(-4px); }
+    .pillar-icon { font-size: 2rem; margin-bottom: 16px; }
+    .concept-pillar h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+    .concept-pillar p { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+    /* FEATURES */
+    .features-section { padding: 100px 0; background: var(--gray-100); }
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+    .feature-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(13,148,136,0.1); }
+    .feature-card-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 3.5rem; font-weight: 900;
+      color: var(--primary);
+      opacity: 0.08;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .feature-card-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .feature-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 12px; color: var(--dark); }
+    .feature-card p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.8; }
+    .feature-card-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-top: 16px;
+    }
+
+    /* MENU */
+    .menu-section { padding: 100px 0; background: var(--white); }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .menu-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .menu-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+    .menu-card-header {
+      background: var(--gradient-primary);
+      padding: 28px 24px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .menu-card-header.accent-bg { background: var(--gradient-accent); color: var(--dark); }
+    .menu-card-header.dark-bg { background: var(--gradient-dark); }
+    .menu-card-icon { font-size: 2rem; margin-bottom: 8px; }
+    .menu-card-header h3 { font-size: 1.1rem; font-weight: 800; }
+    .menu-card-header .menu-tag { font-size: 0.7rem; font-weight: 600; opacity: 0.8; margin-top: 4px; }
+    .menu-card-body { padding: 28px 24px; }
+    .menu-card-body p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 16px; }
+    .menu-topics { display: flex; flex-direction: column; gap: 8px; }
+    .menu-topic {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; color: var(--gray-700);
+    }
+    .menu-topic::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* CASE STUDY */
+    .case-section { padding: 100px 0; background: var(--gray-100); }
+    .case-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      margin-top: 48px;
+      box-shadow: var(--shadow-sm);
+    }
+    .case-card-visual {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--gradient-primary);
+      padding: 40px;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 280px;
+    }
+    .case-visual-content { text-align: center; color: white; }
+    .case-visual-content .case-emoji { font-size: 3rem; margin-bottom: 16px; }
+    .case-visual-content h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
+    .case-visual-content p { font-size: 0.85rem; opacity: 0.8; }
+    .case-badge { display: inline-block; background: var(--accent-light); color: var(--accent-hover); font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+    .case-card-body h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; }
+    .case-card-body p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.8; margin-bottom: 16px; }
+    .case-results { display: flex; gap: 20px; margin-top: 20px; }
+    .case-result {
+      text-align: center;
+      padding: 16px;
+      background: var(--primary-light);
+      border-radius: var(--radius);
+      flex: 1;
+    }
+    .case-result-val { font-family: 'Inter', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--primary); }
+    .case-result-val span { color: var(--accent); }
+    .case-result-label { font-size: 0.7rem; color: var(--gray-500); margin-top: 2px; }
+
+    /* FLOW */
+    .flow-section { padding: 100px 0; background: var(--white); }
+    .flow-timeline { max-width: 800px; margin: 60px auto 0; position: relative; }
+    .flow-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 32px;
+      width: 3px;
+      background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 2px;
+    }
+    .flow-step {
+      display: flex; gap: 28px;
+      padding: 0 0 40px;
+      position: relative;
+    }
+    .flow-step:last-child { padding-bottom: 0; }
+    .flow-step-num {
+      width: 64px; height: 64px;
+      background: var(--white);
+      color: var(--primary);
+      border: 3px solid var(--primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem; font-weight: 900;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s;
+    }
+    .flow-step:hover .flow-step-num { background: var(--primary); color: white; }
+    .flow-step-content { padding-top: 14px; }
+    .flow-step-content h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--dark); }
+    .flow-step-content p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.7; }
+
+    /* TEAM */
+    .team-section { padding: 100px 0; background: var(--gray-100); }
+    .team-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 48px; }
+    .team-info h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.4; }
+    .team-info p { font-size: 0.95rem; color: var(--gray-500); margin-bottom: 16px; line-height: 1.8; }
+    .team-highlights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+    .team-highlight {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 16px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+    .team-highlight-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .team-highlight h4 { font-size: 0.82rem; font-weight: 700; color: var(--dark); }
+    .team-highlight p { font-size: 0.75rem; color: var(--gray-500); margin: 0; }
+    .team-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .team-photo-item { border-radius: var(--radius); overflow: hidden; }
+    .team-photo-item img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.5s; }
+    .team-photo-item:hover img { transform: scale(1.05); }
+    .team-photo-item:first-child { grid-row: span 2; }
+    .team-photo-item:first-child img { height: 100%; min-height: 412px; }
+
+    /* GLOBAL IMPACT */
+    .global-section { padding: 100px 0; background: var(--white); position: relative; }
+    .global-content { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .global-text h2 { font-size: 2rem; font-weight: 900; margin-bottom: 20px; line-height: 1.35; }
+    .global-text p { font-size: 0.95rem; color: var(--gray-500); line-height: 1.8; margin-bottom: 14px; }
+    .global-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .global-gallery-item { border-radius: var(--radius); overflow: hidden; position: relative; }
+    .global-gallery-item img { width: 100%; height: 180px; object-fit: cover; transition: transform 0.5s; }
+    .global-gallery-item:hover img { transform: scale(1.05); }
+    .global-gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 12px; color: white; font-size: 0.75rem; font-weight: 600; }
+
+    /* FAQ */
+    .faq-section { padding: 100px 0; background: var(--gray-100); }
+    .faq-list { max-width: 760px; margin: 48px auto 0; }
+    .faq-item { border-bottom: 1px solid var(--gray-300); overflow: hidden; }
+    .faq-question { padding: 22px 0; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-weight: 700; font-size: 0.95rem; transition: all 0.3s; user-select: none; gap: 16px; }
+    .faq-question:hover { color: var(--primary); }
+    .faq-toggle { width: 28px; height: 28px; min-width: 28px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--primary); transition: all 0.3s; }
+    .faq-item.active .faq-toggle { background: var(--primary); color: white; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-answer-inner { padding: 0 0 22px; font-size: 0.9rem; color: var(--gray-500); line-height: 1.8; }
+    .faq-item.active .faq-answer { max-height: 400px; }
+
+    /* CTA */
+    .cta-section { padding: 100px 0; background: var(--gradient-dark); text-align: center; color: var(--white); position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 120%; height: 120%; background: radial-gradient(ellipse, rgba(13,148,136,0.15) 0%, transparent 60%); }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-content h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 20px; }
+    .cta-content p { font-size: 1.05rem; color: rgba(255,255,255,0.6); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .cta-benefits { display: flex; justify-content: center; gap: 32px; margin-bottom: 40px; flex-wrap: wrap; }
+    .cta-benefit { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+    .cta-benefit svg { color: var(--accent); flex-shrink: 0; }
+
+    /* FOOTER */
+    .footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 60px 0 32px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand img { height: 20px; margin-bottom: 16px; filter: brightness(10); }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; }
+    .footer-col h4 { color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 0.8rem; color: rgba(255,255,255,0.5); transition: color 0.3s; }
+    .footer-col ul li a:hover { color: var(--accent); }
+    .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+
+    .floating-cta { position: fixed; bottom: 24px; right: 24px; z-index: 999; opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
+    .floating-cta.visible { opacity: 1; transform: translateY(0); }
+    .floating-cta .btn { box-shadow: var(--shadow-xl); font-size: 0.85rem; padding: 14px 24px; }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-visual { margin-top: 40px; }
+      .hero-stats { justify-content: center; }
+      .btn-group { justify-content: center; }
+      .features-grid { grid-template-columns: 1fr; }
+      .case-card { grid-template-columns: 1fr; }
+      .team-content { grid-template-columns: 1fr; }
+      .global-content { grid-template-columns: 1fr; }
+      .concept-pillars { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .section-title { font-size: 1.6rem; }
+      .hero { min-height: auto; padding: 110px 0 60px; }
+      .hero-title { font-size: 1.8rem; }
+      .hero-stats { flex-direction: column; gap: 16px; align-items: center; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .concept-title { font-size: 1.8rem; }
+      .flow-timeline::before { left: 32px; }
+      .team-highlights { grid-template-columns: 1fr; }
+      .team-photo-grid { grid-template-columns: 1fr; }
+      .team-photo-item:first-child { grid-row: auto; }
+      .team-photo-item:first-child img { min-height: 200px; }
+      .global-gallery { grid-template-columns: 1fr; }
+      .case-results { flex-direction: column; }
+      .header-nav { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .floating-badge { display: none; }
+      .cta-benefits { flex-direction: column; align-items: center; gap: 12px; }
+    }
+  </style>
+<?php wp_head(); ?></head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/digitive_black.png" alt="digitive">
+        <div class="logo-divider"></div>
+        <span class="logo-product">AI研修</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#problem">よくある課題</a>
+        <a href="#features">選ばれる理由</a>
+        <a href="#menu">研修メニュー</a>
+        <a href="#flow">導入の流れ</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-cta">
+        <a href="#contact" class="btn btn-accent">無料相談する</a>
+      </div>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.header-nav').classList.toggle('show')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">SIO ACCELERATION 2025 採択</div>
+          <h1 class="hero-title">
+            <span class="highlight">「研修」で終わらない</span><br>
+            <span class="accent-text">AI研修</span>を。
+          </h1>
+          <p class="hero-description">
+            元教師×AI企業だからできる、<br>
+            実務に直結する研修設計。<br>
+            企画・実施・定着まで、すべて伴走します。
+          </p>
+          <div class="btn-group">
+            <a href="#contact" class="btn btn-accent">無料相談・お見積り →</a>
+            <a href="#features" class="btn btn-outline">選ばれる理由を見る</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-number">70<span>+</span></div>
+              <div class="hero-stat-label">支援企業・大学数</div>
+            </div>
+            <div>
+              <div class="hero-stat-number">3<span>期目</span></div>
+              <div class="hero-stat-label">AI/DX伴走支援</div>
+            </div>
+            <div>
+              <div class="hero-stat-number">98<span>%</span></div>
+              <div class="hero-stat-label">受講者満足度</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <div class="hero-card-header">
+              <div class="hero-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <div>
+                <div class="hero-card-title">AI研修カリキュラム例</div>
+                <div class="hero-card-subtitle">貴社に合わせてカスタマイズ</div>
+              </div>
+            </div>
+            <div class="hero-curriculum">
+              <div class="hero-curriculum-item">
+                <div class="curriculum-num">01</div>
+                <div class="curriculum-text">ChatGPT / Claude 基礎活用</div>
+              </div>
+              <div class="hero-curriculum-item">
+                <div class="curriculum-num">02</div>
+                <div class="curriculum-text">業務効率化プロンプト設計</div>
+              </div>
+              <div class="hero-curriculum-item">
+                <div class="curriculum-num">03</div>
+                <div class="curriculum-text">Notion × AI ナレッジ管理</div>
+              </div>
+              <div class="hero-curriculum-item">
+                <div class="curriculum-num">04</div>
+                <div class="curriculum-text">自社業務への実践ワークショップ</div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-badge floating-badge-1">
+            <div class="badge-icon" style="background: var(--gradient-primary);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <div class="badge-text-val">実務定着率 85%</div>
+              <div class="badge-text-label">研修3ヶ月後</div>
+            </div>
+          </div>
+          <div class="floating-badge floating-badge-2">
+            <div class="badge-icon" style="background: var(--gradient-accent);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="badge-text-val">業務時間 40%削減</div>
+              <div class="badge-text-label">導入企業平均</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT LOGO MARQUEE -->
+  <section class="logo-marquee-section">
+    <p class="logo-marquee-label">大手企業から大学・自治体まで、多数の<strong>研修パートナー</strong></p>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-14-22.57.17-e1771077495669.png" alt="富山大学様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/unnamed-e1770574476122.jpg" alt="株式会社キャピタルスポーツ"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-02-16.47.09-e1770018760154.png" alt="某スーパーチェーン"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/11/ChatGPT-2025年11月29日-画像.png" alt="スリーメンジャパン株式会社"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/11/ChatGPT-Image-Nov-17-2025.png" alt="メイトク株式会社"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/OIP.jpg" alt="関西大学様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/thumbnail-kandai.jpg" alt="関西大学経済人クラブ様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-doushisha.jpg" alt="同志社女子大学様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/sns.png" alt="ミズカラ様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-spaworld.jpg" alt="SPAWORLD様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/10/thumbnail-sanlio.jpg" alt="丹生堂本舗様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-2025-04-16-162156.png" alt="大阪王将様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-30.png" alt="株式会社どうとんぼり神座様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-29.png" alt="ねぎ焼きやまもと様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/kohmei_logo（会報誌・HP用）.jpg" alt="光明興業株式会社様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/0e5900a7.jpg" alt="たこ屋道頓堀くくる様"></div>
+        <!-- duplicate for seamless -->
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-14-22.57.17-e1771077495669.png" alt="富山大学様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/unnamed-e1770574476122.jpg" alt="株式会社キャピタルスポーツ"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2026/02/スクリーンショット-2026-02-02-16.47.09-e1770018760154.png" alt="某スーパーチェーン"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/11/ChatGPT-2025年11月29日-画像.png" alt="スリーメンジャパン株式会社"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/11/ChatGPT-Image-Nov-17-2025.png" alt="メイトク株式会社"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/OIP.jpg" alt="関西大学様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/thumbnail-kandai.jpg" alt="関西大学経済人クラブ様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-doushisha.jpg" alt="同志社女子大学様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/sns.png" alt="ミズカラ様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-spaworld.jpg" alt="SPAWORLD様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/10/thumbnail-sanlio.jpg" alt="丹生堂本舗様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-2025-04-16-162156.png" alt="大阪王将様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-30.png" alt="株式会社どうとんぼり神座様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-29.png" alt="ねぎ焼きやまもと様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/kohmei_logo（会報誌・HP用）.jpg" alt="光明興業株式会社様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/0e5900a7.jpg" alt="たこ屋道頓堀くくる様"></div>
+      </div>
+    </div>
+    <div class="marquee-wrapper" style="margin-top: 14px;">
+      <div class="marquee-track marquee-track-reverse">
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/1970LF_logo_yoko_date-01.jpg" alt="らぽっぽファーム様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-2025-04-16-153802.png" alt="クンテープ様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-27.png" alt="炭火焼肉道頓堀みつる様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-2025-04-16-162141.png" alt="大起水産様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-31.png" alt="道頓堀てっぱん豊島家様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/豚かつ牛かつ_くれおーる_ロゴ2提出_0.png" alt="豚かつ牛かつくれおーる様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-2025-04-16-153745.png" alt="大阪新世界元祖串カツだるま様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/OIP-1.jpg" alt="株式会社ジャパン・フラワー・コーポレーション様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/05/スクリーンショット-2025-05-01-104423-e1746063957221.png" alt="株式会社エンディングライフ様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/05/thumbnail-tokushoma.jpg" alt="徳島大学様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-kender.jpg" alt="菅原天満幼稚園様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/11/thumbnail-sun-creek.jpg" alt="サン・クリーク様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/11/thumbnail-senstar-1.jpg" alt="SENSTAR様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/10/thumbnail-persol.jpg" alt="パーソルキャリア様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/06/thumbnail-lnsmanagement.jpg" alt="LNSマネジメント様"></div>
+        <!-- duplicate for seamless -->
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/1970LF_logo_yoko_date-01.jpg" alt="らぽっぽファーム様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-2025-04-16-153802.png" alt="クンテープ様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-27.png" alt="炭火焼肉道頓堀みつる様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-2025-04-16-162141.png" alt="大起水産様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-31.png" alt="道頓堀てっぱん豊島家様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/豚かつ牛かつ_くれおーる_ロゴ2提出_0.png" alt="豚かつ牛かつくれおーる様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/スクリーンショット-2025-04-16-153745.png" alt="大阪新世界元祖串カツだるま様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/04/OIP-1.jpg" alt="株式会社ジャパン・フラワー・コーポレーション様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2025/05/スクリーンショット-2025-05-01-104423-e1746063957221.png" alt="株式会社エンディングライフ様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/05/thumbnail-tokushoma.jpg" alt="徳島大学様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/07/thumbnail-kender.jpg" alt="菅原天満幼稚園様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/11/thumbnail-sun-creek.jpg" alt="サン・クリーク様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/11/thumbnail-senstar-1.jpg" alt="SENSTAR様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/10/thumbnail-persol.jpg" alt="パーソルキャリア様"></div>
+        <div class="marquee-item"><img src="https://digitive.jp/wp-content/uploads/2024/06/thumbnail-lnsmanagement.jpg" alt="LNSマネジメント様"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem-section" id="problem">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Problem</span>
+        <h2 class="section-title">AI研修、こんな悩みありませんか？</h2>
+        <p class="section-subtitle">「やらなきゃ」と思いつつ、何から始めればいいか分からない。よくあるお悩みです。</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card reveal">
+          <div class="problem-card-num">01</div>
+          <div class="problem-card-icon" style="background: var(--primary-light);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+          </div>
+          <h3>何を学べばいいか分からない</h3>
+          <p>AIツールが多すぎて、自社に合ったものがどれか判断できない。一般論の研修では実務に活きない。</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="problem-card-num">02</div>
+          <div class="problem-card-icon" style="background: var(--accent-light);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>受講者のレベルがバラバラ</h3>
+          <p>ITに慣れた若手と、AIに触れたことがないベテラン。全員が「分かった」と言える研修が見つからない。</p>
+        </div>
+        <div class="problem-card reveal">
+          <div class="problem-card-num">03</div>
+          <div class="problem-card-icon" style="background: #f0e6ff;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <h3>研修後に使われなくなる</h3>
+          <p>「面白かった」で終わり、翌週には元通り。実務で使い続ける仕組みがないと意味がない。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="concept-section" id="concept">
+    <div class="container">
+      <div class="concept-inner reveal">
+        <span class="section-label">Our Concept</span>
+        <h2 class="concept-title">
+          「研修」で<em>終わらない</em>研修。
+        </h2>
+        <p class="concept-description">
+          digitiveの研修は、一回きりのイベントではありません。<br>
+          実現したい未来から逆算し、実務に根づくまで伴走する。<br>
+          それが、私たちの研修です。
+        </p>
+        <div class="concept-pillars">
+          <div class="concept-pillar reveal">
+            <div class="pillar-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3>的確な研修設計</h3>
+            <p>企画段階から貴社と協働。実現したい未来から逆算した、最適なカリキュラムを設計します。</p>
+          </div>
+          <div class="concept-pillar reveal">
+            <div class="pillar-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <h3>面白い研修体験</h3>
+            <p>元教師の講師が、広告・動画制作の知見を活かし「伝わる」研修を実現。眠くならない90分をお約束。</p>
+          </div>
+          <div class="concept-pillar reveal">
+            <div class="pillar-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>継続的な定着支援</h3>
+            <p>研修後もチャットサポート・フォローアップ研修で、学びを実務に定着させます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Why digitive</span>
+        <h2 class="section-title">digitiveが選ばれる理由</h2>
+        <p class="section-subtitle">AI企業であり、元教師がいるから。研修の「内容」と「伝え方」の両方にこだわります。</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-card-number">01</div>
+          <div class="feature-card-icon" style="background: var(--primary-light);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>自社でAIを使い倒している「実践者」が教える</h3>
+          <p>digitiveはAIプロダクト開発・AI導入支援を本業とする企業。理論だけでなく、自社の業務でAIを使い倒した実体験から教えるので、リアルな活用法が学べます。</p>
+          <span class="feature-card-tag">AI企業だからこその説得力</span>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card-number">02</div>
+          <div class="feature-card-icon" style="background: var(--accent-light);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>元教師だから「伝え方」が違う</h3>
+          <p>教壇に立ってきた経験を持つ講師だからこそ、「初心者でも分かる」を徹底。専門用語を噛み砕き、全員が「自分でもできそう」と思える研修を設計します。</p>
+          <span class="feature-card-tag">教育のプロの技術</span>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card-number">03</div>
+          <div class="feature-card-icon" style="background: #f0e6ff;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>貴社の業務に合わせたフルカスタマイズ</h3>
+          <p>テンプレートの研修ではなく、ヒアリングで貴社の課題を深堀り。「自分たちの仕事」に直結するカリキュラムをゼロから設計します。</p>
+          <span class="feature-card-tag">完全オーダーメイド</span>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card-number">04</div>
+          <div class="feature-card-icon" style="background: #e6f7ef;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>研修後のフォローアップで確実に定着</h3>
+          <p>研修して終わりではありません。チャットサポート、復習動画、フォローアップ研修を組み合わせ、実務で使い続けられる状態まで伴走します。</p>
+          <span class="feature-card-tag">定着まで伴走</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Training Menu</span>
+        <h2 class="section-title">研修メニュー</h2>
+        <p class="section-subtitle">ご要望に応じてカスタマイズ可能。組み合わせや回数も柔軟に対応します。</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card reveal">
+          <div class="menu-card-header">
+            <div class="menu-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>AI基礎活用研修</h3>
+            <div class="menu-tag">初心者〜中級者向け</div>
+          </div>
+          <div class="menu-card-body">
+            <p>ChatGPT・Claudeなど生成AIの基礎から、業務で使えるプロンプト設計まで。初めてAIに触れる方でも安心です。</p>
+            <div class="menu-topics">
+              <div class="menu-topic">生成AIの仕組みと可能性</div>
+              <div class="menu-topic">プロンプトエンジニアリング基礎</div>
+              <div class="menu-topic">メール・議事録・企画書のAI活用</div>
+              <div class="menu-topic">業務別ハンズオンワーク</div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card reveal">
+          <div class="menu-card-header accent-bg">
+            <div class="menu-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>DX推進・業務改善研修</h3>
+            <div class="menu-tag">管理職・推進担当者向け</div>
+          </div>
+          <div class="menu-card-body">
+            <p>Notion・自動化ツールを活用し、業務フローの改善を実践。DX推進のリーダーを育成します。</p>
+            <div class="menu-topics">
+              <div class="menu-topic">Notion によるナレッジ管理構築</div>
+              <div class="menu-topic">業務フロー可視化と改善設計</div>
+              <div class="menu-topic">Zapier / Make による自動化</div>
+              <div class="menu-topic">DX推進ロードマップ策定</div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card reveal">
+          <div class="menu-card-header dark-bg">
+            <div class="menu-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>AI活用 応用研修</h3>
+            <div class="menu-tag">技術者・開発者向け</div>
+          </div>
+          <div class="menu-card-body">
+            <p>AIを活用した業務自動化・データ分析・プロダクト開発まで。一歩先のAI活用を目指す方に。</p>
+            <div class="menu-topics">
+              <div class="menu-topic">API連携によるAI組み込み</div>
+              <div class="menu-topic">RAG / AIチャットボット構築</div>
+              <div class="menu-topic">データ分析×AI活用</div>
+              <div class="menu-topic">AIプロダクト企画ワークショップ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section class="case-section" id="case">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Case Study</span>
+        <h2 class="section-title">導入事例</h2>
+        <p class="section-subtitle">実際の研修導入で、どのような変化が生まれたかをご紹介します。</p>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card-visual">
+          <div class="case-visual-content">
+            <div class="case-emoji">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h4>大学様</h4>
+            <p>AI活用講義（全学部対象）</p>
+          </div>
+        </div>
+        <div class="case-card-body">
+          <span class="case-badge">大学・教育機関</span>
+          <h3>全学部対象のAI活用講義で、学生の研究効率が大幅向上</h3>
+          <p>「AIは使い方次第で、研究も就職活動も加速する」——全学部の学生を対象にAI活用講義を実施。論文検索・データ整理・プレゼン資料作成にAIを活用する実践的な内容で、受講後のアンケートで高い満足度を獲得しました。</p>
+          <div class="case-results">
+            <div class="case-result">
+              <div class="case-result-val">98<span>%</span></div>
+              <div class="case-result-label">受講者満足度</div>
+            </div>
+            <div class="case-result">
+              <div class="case-result-val">40<span>%</span></div>
+              <div class="case-result-label">作業時間削減</div>
+            </div>
+            <div class="case-result">
+              <div class="case-result-val">3<span>回</span></div>
+              <div class="case-result-label">連続リピート</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="flow-section" id="flow">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Flow</span>
+        <h2 class="section-title">導入の流れ</h2>
+        <p class="section-subtitle">お問い合わせから研修実施、定着支援まで。安心のプロセスで進めます。</p>
+      </div>
+      <div class="flow-timeline">
+        <div class="flow-step reveal">
+          <div class="flow-step-num">01</div>
+          <div class="flow-step-content">
+            <h4>お問い合わせ</h4>
+            <p>まずはお気軽にご相談ください。「AIやNotionを使ったことがない」という段階でも大丈夫です。24時間以内にご返信します。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">02</div>
+          <div class="flow-step-content">
+            <h4>ヒアリング・課題整理</h4>
+            <p>現状の課題や理想の状態をお伺いし、貴社にとって最適な研修の方向性を整理します。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">03</div>
+          <div class="flow-step-content">
+            <h4>お見積り・ご提案</h4>
+            <p>課題に合わせた研修プランと見積りをご提案。内容・回数・形式（対面/オンライン）も柔軟に対応します。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">04</div>
+          <div class="flow-step-content">
+            <h4>ご契約</h4>
+            <p>研修内容にご納得いただけましたら、契約締結へ。実施日程の調整も行います。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">05</div>
+          <div class="flow-step-content">
+            <h4>研修実施</h4>
+            <p>ハンズオン中心の実践型研修を実施。受講者の反応を見ながら、その場でレベルや進行を調整します。</p>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-step-num">06</div>
+          <div class="flow-step-content">
+            <h4>定着支援・フォローアップ</h4>
+            <p>研修後もチャットサポート・復習動画・フォローアップ研修で継続的に支援。「使えるようになった」まで伴走します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">About Us</span>
+        <h2 class="section-title">研修を担うチーム</h2>
+        <p class="section-subtitle">AI企業で働くメンバーが、現場のリアルな知見を直接お届けします。</p>
+      </div>
+      <div class="team-content reveal">
+        <div class="team-info">
+          <h3>元教師×AI企業。<br>だから伝わる、使える。</h3>
+          <p>digitiveの研修講師は、教壇に立った経験とAI企業での実務経験の両方を持っています。</p>
+          <p>「分かりやすく伝える力」と「最新AIの実践知識」を組み合わせ、受講者全員が「明日から使える」状態を目指します。</p>
+          <div class="team-highlights">
+            <div class="team-highlight">
+              <div class="team-highlight-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div>
+                <h4>元教師の講師陣</h4>
+                <p>教育のプロの「伝え方」</p>
+              </div>
+            </div>
+            <div class="team-highlight">
+              <div class="team-highlight-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div>
+                <h4>AI実務のプロ</h4>
+                <p>自社で使い倒した実体験</p>
+              </div>
+            </div>
+            <div class="team-highlight">
+              <div class="team-highlight-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <h4>広告・映像制作</h4>
+                <p>「伝える」コンテンツ制作力</p>
+              </div>
+            </div>
+            <div class="team-highlight">
+              <div class="team-highlight-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <h4>海外教育支援</h4>
+                <p>タイ・カンボジアでの実績</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="team-photo-grid">
+          <div class="team-photo-item">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/images/digitive-activity-img1.jpg" alt="digitive 研修の様子">
+          </div>
+          <div class="team-photo-item">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/images/digitive-activity-img2.jpg" alt="タイでの教育支援">
+          </div>
+          <div class="team-photo-item">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/images/digitive-activity-img3.jpg" alt="カンボジアでの教育支援">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL IMPACT -->
+  <section class="global-section">
+    <div class="container">
+      <div class="global-content reveal">
+        <div class="global-text">
+          <span class="section-label">Global Impact</span>
+          <h2>世界中の子どもたちに、<br>挑戦のきっかけを。</h2>
+          <p>digitiveは事業活動だけでなく、タイ・カンボジアを中心に、子どもたちへの映像制作・デジタルスキル教育を行っています。</p>
+          <p>テクノロジーで人々の可能性を解放する。その想いは、AI研修にも、海外でのDX教育支援にも、同じ根を持っています。</p>
+          <p style="color: var(--gray-300); font-style: italic; font-size: 0.85rem; margin-top: 20px;">「挑戦のきっかけを作り、挑戦者の想いを広げる。」</p>
+        </div>
+        <div class="global-gallery">
+          <div class="global-gallery-item">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/images/digitive-activity-img2.jpg" alt="タイでの映像授業">
+            <div class="global-gallery-caption">タイ・スリン県 映像制作講義</div>
+          </div>
+          <div class="global-gallery-item">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/images/digitive-activity-img3.jpg" alt="カンボジア教育支援">
+            <div class="global-gallery-caption">カンボジア 写真・映像教育</div>
+          </div>
+          <div class="global-gallery-item">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/images/digitive-activity-img4.jpg" alt="大学講義">
+            <div class="global-gallery-caption">関西大学 クリエイティブ講義</div>
+          </div>
+          <div class="global-gallery-item">
+            <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/images/digitive-activity-img1-2.jpg" alt="子どもたちとの交流">
+            <div class="global-gallery-caption">DX教育支援の拡大</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+            <span>AIやNotionを使ったことがない社員がほとんどですが、大丈夫ですか？</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、まったく問題ありません。受講者のスキルレベルに合わせてカリキュラムを設計するので、PC操作に不安がある方でも「自分にもできた」と感じていただけます。実際にIT経験のない方が大半の企業様にも多数導入いただいています。</div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+            <span>研修の費用はどのくらいですか？</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">内容・回数・人数によって異なりますが、まずは無料でヒアリング・お見積りをさせていただきます。ご予算に応じた最適なプランをご提案しますので、お気軽にお問い合わせください。</div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+            <span>オンラインでの研修も可能ですか？</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、対面・オンライン・ハイブリッドのいずれにも対応しています。オンライン研修でもハンズオン形式を取り入れ、受講者が実際に手を動かしながら学べる設計にしています。</div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+            <span>研修は何回くらい必要ですか？</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">目的によって異なりますが、AI基礎であれば1〜2回、業務定着まで含めると3〜6回のプログラムをおすすめしています。単発の講演・セミナー形式にも対応可能です。</div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+            <span>研修後のフォローはありますか？</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい。研修後もチャットでの質問対応、復習用動画の提供、フォローアップ研修などをご用意しています。「研修で終わらない」ための定着支援が、私たちの最大の強みです。</div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+            <span>大学や教育機関向けの研修もできますか？</span>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、関西大学様、同志社女子大学様、富山大学様、徳島大学様など多数の大学・教育機関での講義・研修実績があります。学生向け・教員向けそれぞれに最適化したプログラムをご提案可能です。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2>まずは、お気軽にご相談ください。</h2>
+        <p>「何から始めればいいか分からない」その段階からで大丈夫です。<br>24時間以内にご返信します。</p>
+        <div class="cta-benefits">
+          <div class="cta-benefit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            相談・ヒアリング無料
+          </div>
+          <div class="cta-benefit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            オンラインでもOK
+          </div>
+          <div class="cta-benefit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            24時間以内に返信
+          </div>
+        </div>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="https://digitive.jp/service/kensyu/" class="btn btn-accent" target="_blank">メールでお問い合わせ →</a>
+          <a href="https://digitive.jp/service/kensyu/" class="btn btn-white" target="_blank">研修サービス詳細を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/lp-assets/logos/digitive_white.png" alt="digitive">
+          <p style="margin-top: 16px;">テクノロジーで、挑戦者の可能性を解き放つ。<br>AI研修・DX支援・映像制作を手がけるdigitiveです。</p>
+        </div>
+        <div class="footer-col">
+          <h4>サービス</h4>
+          <ul>
+            <li><a href="https://digitive.jp/service/kensyu/" target="_blank">AI研修</a></li>
+            <li><a href="https://digitive.jp/service/" target="_blank">DX支援</a></li>
+            <li><a href="https://digitive.jp/service/" target="_blank">映像制作</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>会社情報</h4>
+          <ul>
+            <li><a href="https://digitive.jp/company/" target="_blank">会社概要</a></li>
+            <li><a href="https://digitive.jp/news/" target="_blank">ニュース</a></li>
+            <li><a href="https://digitive.jp/contact/" target="_blank">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>その他</h4>
+          <ul>
+            <li><a href="https://digitive.jp/privacy/" target="_blank">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 digitive Inc. All rights reserved.</span>
+        <span>大阪市中央区</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="#contact" class="btn btn-accent">無料で相談する →</a>
+  </div>
+
+  <script>
+    // Reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Floating CTA
+    const floatingCta = document.getElementById('floatingCta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    });
+
+    // Header shadow
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.06)' : 'none';
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+<?php wp_footer(); ?></body>
+</html>

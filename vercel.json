@@ -9,6 +9,11 @@
       "source": "/kachitto",
       "destination": "/kachitto/",
       "permanent": false
+    },
+    {
+      "source": "/kensyu",
+      "destination": "/kensyu/",
+      "permanent": false
     }
   ],
   "rewrites": [
@@ -21,12 +26,20 @@
       "destination": "/dist/kachitto/index.html"
     },
     {
+      "source": "/kensyu/",
+      "destination": "/dist/kensyu/index.html"
+    },
+    {
       "source": "/creative/:path*",
       "destination": "/dist/creative/:path*"
     },
     {
       "source": "/kachitto/:path*",
       "destination": "/dist/kachitto/:path*"
+    },
+    {
+      "source": "/kensyu/:path*",
+      "destination": "/dist/kensyu/:path*"
     }
   ]
 }

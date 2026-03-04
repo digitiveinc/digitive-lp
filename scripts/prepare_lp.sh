@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 <creative|kachitto> [output_root]"
+  echo "Usage: $0 <creative|kachitto|kensyu> [output_root]"
   exit 1
 fi
 
@@ -16,8 +16,11 @@ case "$LP_NAME" in
   kachitto)
     SRC_HTML="kachitto-lp.html"
     ;;
+  kensyu)
+    SRC_HTML="kensyu-lp.html"
+    ;;
   *)
-    echo "Error: unknown LP '$LP_NAME'. Use creative or kachitto."
+    echo "Error: unknown LP '$LP_NAME'. Use creative, kachitto, or kensyu."
     exit 1
     ;;
 esac

@@ -24,7 +24,9 @@ build_template() {
 
 build_template "creative-lp.html" "$OUT_DIR/page-lp-creative.php" "LP Creative Standalone"
 build_template "kachitto-lp.html" "$OUT_DIR/page-lp-kachitto.php" "LP Kachitto Standalone"
+build_template "kensyu-lp.html" "$OUT_DIR/page-lp-kensyu.php" "LP Kensyu Standalone"
 
 echo "Generated:"
 echo "- $OUT_DIR/page-lp-creative.php"
 echo "- $OUT_DIR/page-lp-kachitto.php"
+echo "- $OUT_DIR/page-lp-kensyu.php"
