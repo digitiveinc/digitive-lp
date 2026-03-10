@@ -307,7 +307,7 @@ if (!defined('ABSPATH')) { exit; }
         <a href="#faq">FAQ</a>
       </nav>
       <div class="header-cta">
-        <a href="#contact" class="btn btn-accent">無料相談する</a>
+        <a href="https://digitive.jp/contact/" class="btn btn-accent">無料相談する</a>
       </div>
       <button class="mobile-menu-btn" onclick="document.querySelector('.header-nav').classList.toggle('show')">
         <span></span><span></span><span></span>
@@ -331,7 +331,7 @@ if (!defined('ABSPATH')) { exit; }
             LINEで誰でも、すぐに、社内の情報にアクセスできる世界を。
           </p>
           <div class="btn-group">
-            <a href="#contact" class="btn btn-accent">無料相談・お見積り →</a>
+            <a href="https://digitive.jp/contact/" class="btn btn-accent">無料相談・お見積り →</a>
             <a href="#solution" class="btn btn-outline">サービス詳細を見る</a>
           </div>
           <div class="hero-stats">
@@ -783,7 +783,7 @@ if (!defined('ABSPATH')) { exit; }
         <h2>まずは無料ヒアリングから。</h2>
         <p>御社の課題をお伺いし、カチットでどう解決できるかご提案します。お気軽にご相談ください。</p>
         <div class="btn-group" style="justify-content: center;">
-          <a href="mailto:info@digitive.jp" class="btn btn-accent">無料相談・お見積り →</a>
+          <a href="https://digitive.jp/contact/" class="btn btn-accent">無料相談・お見積り →</a>
           <a href="https://digitive.jp/" target="_blank" class="btn btn-white">会社サイトを見る</a>
         </div>
       </div>
@@ -823,7 +823,7 @@ if (!defined('ABSPATH')) { exit; }
           <h4>お問い合わせ</h4>
           <ul>
             <li><a href="mailto:info@digitive.jp">info@digitive.jp</a></li>
-            <li><a href="#contact">無料相談する</a></li>
+            <li><a href="https://digitive.jp/contact/">無料相談する</a></li>
           </ul>
         </div>
       </div>
@@ -835,7 +835,7 @@ if (!defined('ABSPATH')) { exit; }
   </footer>
 
   <div class="floating-cta" id="floatingCta">
-    <a href="#contact" class="btn btn-accent">無料相談する →</a>
+    <a href="https://digitive.jp/contact/" class="btn btn-accent">無料相談する →</a>
   </div>
 
   <script>
